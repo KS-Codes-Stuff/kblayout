@@ -5,7 +5,7 @@ enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _QWERTY,
     _BONE,
-    _COLEMAK,
+    // _COLEMAK,
     _LOWER,
     _RAISE,
     _ADJUST,
@@ -58,36 +58,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LGUI, KC_LALT, KC_LCTL, MO(2), KC_SPC,                 KC_ENT, TT(3), KC_LCTL, KC_LALT, KC_LGUI \
 ),
 
-// /*
-//  * COLEMAK
-//  * ,-----------------------------------------.                    ,-----------------------------------------.
-//  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
-//  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-//  * | ESC  |   Q  |   W  |   F  |   P  |   G  |                    |   J  |   L  |   U  |   Y  |   ;  | Bspc |
-//  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-//  * | TAB  |   A  |   R  |   S  |   T  |   D  |-------.    ,-------|   H  |   N  |   E  |   I  |   O  |  '   |
-//  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
-//  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   K  |   M  |   ,  |   .  |   /  |RShift|
-//  * `-----------------------------------------/       /     \      \-----------------------------------------'
-//  *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
-//  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
-//  *            `----------------------------------'           '------''---------------------------'
-//  */
+/*
+ * COLEMAK
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | ESC  |   Q  |   W  |   F  |   P  |   G  |                    |   J  |   L  |   U  |   Y  |   ;  | Bspc |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | TAB  |   A  |   R  |   S  |   T  |   D  |-------.    ,-------|   H  |   N  |   E  |   I  |   O  |  '   |
+ * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
+ * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   K  |   M  |   ,  |   .  |   /  |RShift|
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
+ *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+ *            `----------------------------------'           '------''---------------------------'
+ */
 
-// [_COLEMAK] = LAYOUT( \
-//   KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV, \
-//   KC_ESC,   KC_Q,   KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN,  KC_BSPC, \
-//   KC_TAB,   KC_A,   KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,  KC_QUOT, \
-//   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE,      KC_MPLY ,KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT, \
-//                  KC_LGUI,KC_LALT,KC_LCTRL,KC_LOWER, KC_ENT,      KC_SPC,  KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI \
-// ),
+/*[_COLEMAK] = LAYOUT( \
+  KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV, \
+  KC_ESC,   KC_Q,   KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN,  KC_BSPC, \
+  KC_TAB,   KC_A,   KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,  KC_QUOT, \
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE,      KC_MPLY ,KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT, \
+                 KC_LGUI,KC_LALT,KC_LCTRL,KC_LOWER, KC_ENT,      KC_SPC,  KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI \
+),
+*/
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | F12  |
+ * |  `   |   1  |   2  |   [  |   ]  |   ^  |                    |   !  |   <  |   >  |   9  |   0  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |   !  |   @  |   #  |   $  |   %  |-------.    ,-------|   ^  |   &  |   *  |   (  |   )  |   |  |
+ * | Tab  |   !  |   @  |   {  |   }  |   %  |-------.    ,-------|   ?  |   (  |   )  |   (  |     |   |  |
  * |------+------+------+------+------+------|  MUTE |    | PAUSE |------+------+------+------+------+------|
  * | Shift|  =   |  -   |  +   |   {  |   }  |-------|    |-------|   [  |   ]  |   ;  |   :  |   \  | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -96,12 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT( \
-  KC_TRNS,   KC_F1,   KC_F2,  KC_F3,    KC_F4,  KC_F5,                  KC_F6,     KC_F7,     KC_F8,    KC_F9,       KC_F10,      KC_BSPC, \
-  KC_GRV,    KC_1,    KC_2,   RALT(KC_8),  RALT(KC_9), KC_GRV,          KC_EXLM,   KC_NUBS,   LSFT(KC_NUBS),     LSFT(KC_0),     KC_F11,    KC_F12, \
-  KC_TRNS,   RALT(KC_MINS), KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), LSFT(KC_MINS), LSFT(KC_8), LSFT(KC_9), KC_CIRC, RALT(KC_Q), KC_PIPE, \
-  KC_TRNS,   KC_LBRC, KC_NUHS, RALT(KC_NUBS), KC_LCBR, KC_RCBR, KC_TRNS,    KC_TRNS,    KC_PERC,    KC_AT, KC_SCLN, KC_COLN, KC_BSLS, KC_TRNS, \
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS \
-),
+  LAYOUT(KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), KC_AT, LSFT(KC_8), LSFT(KC_P9), KC_CIRC, RALT(KC_Q), KC_PIPE, KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
@@ -137,8 +133,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-  [_ADJUST] = LAYOUT( \
-  KC_TRNS, DF(2), DF(0), DF(1), CG_TOGG, RESET, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+[_ADJUST] = LAYOUT( \
+  KC_TRNS, DF(2), DF(0), DF(1), CG_TOGG, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
   KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO, \
   KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV, KC_MNXT, KC_F13, KC_F14, KC_F15, KC_F16, KC_NO, \
   KC_TRNS, KC_F17, KC_F18, KC_F19, KC_F20, KC_MNXT, KC_TRNS, KC_TRNS, KC_MPRV, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS, \
@@ -147,6 +143,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef OLED_DRIVER_ENABLE
+
+#define OLED_TIMEOUT 4000
+#define OLED_SCROLL_TIMEOUT 1000
 
 void suspend_power_down_user(void) {
     oled_off();
@@ -177,9 +176,9 @@ static void print_status_narrow(void) {
         case _QWERTY:
             oled_write_ln_P(PSTR("Qwrt"), false);
             break;
-        case _COLEMAK:
-            oled_write_ln_P(PSTR("Clmk"), false);
-            break;
+        // case _COLEMAK:
+        //     oled_write_ln_P(PSTR("Clmk"), false);
+        //     break;
         case _BONE:
             oled_write_ln_P(PSTR("Bone"), false);
             break;
@@ -190,8 +189,8 @@ static void print_status_narrow(void) {
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case _COLEMAK:
-        case _BONE
+        // case _COLEMAK:
+        case _BONE:
         case _QWERTY:
             oled_write_P(PSTR("Base\n"), false);
             break;
@@ -224,6 +223,7 @@ void oled_task_user(void) {
         print_status_narrow();
     } else {
         render_logo();
+        oled_scroll_left();
     }
 }
 
@@ -236,11 +236,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_single_persistent_default_layer(_QWERTY);
             }
             return false;
-        case KC_COLEMAK:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_COLEMAK);
-            }
-            return false;
+        // case KC_COLEMAK:
+        //     if (record->event.pressed) {
+        //         set_single_persistent_default_layer(_COLEMAK);
+        //     }
+        //    return false;
         case KC_LOWER:
             if (record->event.pressed) {
                 layer_on(_LOWER);
@@ -395,9 +395,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
-            tap_code(KC_VOLU);
+            tap_code(KC_UP);
         } else {
-            tap_code(KC_VOLD);
+            tap_code(KC_DOWN);
         }
     } else if (index == 1) {
         if (clockwise) {
