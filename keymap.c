@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-[_LOWER] = LAYOUT(KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), KC_AT, LSFT(KC_8), LSFT(KC_P9), KC_CIRC, RALT(KC_Q), KC_PIPE, KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
+[_LOWER] = LAYOUT(KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), KC_AT, LSFT(KC_8), LSFT(KC_9), KC_CIRC, RALT(KC_Q), KC_PIPE, KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
