@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#define TAPPING_TOGGLE 2
 
 enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
@@ -96,8 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-[_LOWER] = LAYOUT( \
-  LAYOUT(KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), KC_AT, LSFT(KC_8), LSFT(KC_P9), KC_CIRC, RALT(KC_Q), KC_PIPE, KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
+[_LOWER] = LAYOUT(KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), KC_AT, LSFT(KC_8), LSFT(KC_P9), KC_CIRC, RALT(KC_Q), KC_PIPE, KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
@@ -143,9 +141,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef OLED_DRIVER_ENABLE
-
-#define OLED_TIMEOUT 4000
-#define OLED_SCROLL_TIMEOUT 1000
 
 void suspend_power_down_user(void) {
     oled_off();
@@ -395,9 +390,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
-            tap_code(KC_UP);
-        } else {
             tap_code(KC_DOWN);
+        } else {
+            tap_code(KC_UP);
         }
     } else if (index == 1) {
         if (clockwise) {
