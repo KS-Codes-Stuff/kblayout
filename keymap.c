@@ -8,6 +8,7 @@ enum sofle_layers {
     _LOWER,
     _RAISE,
     _ADJUST,
+    _GAME,
 };
 
 enum custom_keycodes {
@@ -96,7 +97,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-[_LOWER] = LAYOUT(KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), KC_AT, LSFT(KC_8), LSFT(KC_9), KC_CIRC, RALT(KC_Q), KC_PIPE, KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
+[_LOWER] = LAYOUT( \
+KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, \
+KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_BSPC, \
+
+KC_GRV, LSFT(LCTL(KC_A)), MEH(KC_A), RALT(KC_8), RALT(KC_9), LSFT(KC_MINS), \
+KC_EXLM, KC_NUBS, LSFT(KC_NUBS), LSFT(KC_0), KC_F11, KC_F12, \
+
+KC_TRNS, KC_NUHS, KC_MINS, RALT(KC_7), RALT(KC_0), LSFT(KC_NUHS), \
+KC_AT, LSFT(KC_8), LSFT(KC_9), KC_CIRC, RALT(KC_Q), KC_PIPE, \
+
+KC_TRNS, KC_LBRC, RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), KC_RCBR, \
+KC_TRNS, KC_TRNS, KC_RBRC, KC_SLSH, KC_GRV, KC_PERC, \
+
+KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
+
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
@@ -117,7 +133,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS, KC_LALT, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGUP, KC_RBRC, KC_4, KC_5, KC_6, KC_SLSH, KC_NO, \
   KC_TRNS, LCTL(KC_Z), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), KC_PGDN, KC_TRNS, KC_TRNS, KC_0, KC_1, KC_2, KC_3, KC_APP, KC_TRNS, \
   KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
-),
+  ),
+
 /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
@@ -133,13 +150,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_ADJUST] = LAYOUT( \
-  KC_TRNS, DF(2), DF(0), DF(1), CG_TOGG, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+  KC_TRNS, KC_TRNS, DF(0), DF(1), TO(5), KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
   KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO, \
   KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV, KC_MNXT, KC_F13, KC_F14, KC_F15, KC_F16, KC_NO, \
   KC_TRNS, KC_F17, KC_F18, KC_F19, KC_F20, KC_MNXT, KC_TRNS, KC_TRNS, KC_MPRV, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS, \
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
-  )
-};
+  ),
+
+[_GAME] = LAYOUT( \
+  KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC, \
+  KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, \
+  KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, \
+  KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, \
+  KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_MUTE, KC_MPLY, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_ENT), \
+  KC_GRAVE, KC_LALT, KC_M, KC_LCTL, KC_SPC, TO(0), TT(3), KC_RCTL, KC_RALT, KC_RGUI \
+  )};
 
 #ifdef OLED_DRIVER_ENABLE
 
@@ -198,6 +223,9 @@ static void print_status_narrow(void) {
             break;
         case _ADJUST:
             oled_write_P(PSTR("Adj\n"), false);
+            break;
+        case _GAME:
+            oled_write_P(PSTR("Game\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
