@@ -418,18 +418,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_DOWN);
+        if(IS_LAYER_ON(_LOWER)) {
+            if (clockwise) {
+                tap_code(KC_VOLU);
+            } else {
+                tap_code(KC_VOLD);
+            }
         } else {
-            tap_code(KC_UP);
+            if (clockwise) {
+                tap_code(KC_DOWN);
+            } else {
+                tap_code(KC_UP);
+            }
         }
     } else if (index == 1) {
+        if(IS_LAYER_ON(_LOWER)) {
+            if (clockwise) {
+                tap_code(LCTL(KC_Y));
+            } else {
+                tap_code(LCTL(KC_Z));
+            }  
+    } else {
         if (clockwise) {
-            tap_code(KC_RIGHT);
-        } else {
-            tap_code(KC_LEFT);
+                tap_code(KC_RIGHT);
+            } else {
+                tap_code(KC_LEFT);
+            }
         }
-    }
 }
 
 #endif
