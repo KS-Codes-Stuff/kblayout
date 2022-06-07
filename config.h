@@ -8,3 +8,7 @@ for more options.
 #define OLED_TIMEOUT 4000
 #define OLED_SCROLL_TIMEOUT 1000
 #define TAPPING_TOGGLE 2
+//#define TAPPING_TERM 180
+#define IGNORE_MOD_TAP_INTERRUPT
+//#define TAPPING_FORCE_HOLD
+#define PERMISSIVE_HOLD
