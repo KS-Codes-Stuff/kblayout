@@ -151,8 +151,8 @@ KC_TRNS, KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
  */
 [_ADJUST] = LAYOUT( \
   KC_TRNS, KC_TRNS, DF(0), DF(1), TO(5), KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-  KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO, \
-  KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV, KC_MNXT, KC_F13, KC_F14, KC_F15, KC_F16, KC_NO, \
+  DT_UP, KC_F1, KC_F2, KC_F3, KC_F4, KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO, \
+  DT_DOWN, KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV, KC_MNXT, KC_F13, KC_F14, KC_F15, KC_F16, KC_NO, \
   KC_TRNS, KC_F17, KC_F18, KC_F19, KC_F20, KC_MNXT, KC_TRNS, KC_TRNS, KC_MPRV, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS, \
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
   ),
@@ -233,6 +233,7 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("\n\n"), false);
     led_t led_usb_state = host_keyboard_led_state();
     oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+    oled_write_ln_P(g_tapping_term, false);
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -434,7 +435,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 1) {
         if(IS_LAYER_ON(_LOWER)) {
             if (clockwise) {
-                tap_code(LCTL(KC_Y));
+                tap_code(LCTL(KC_R));
             } else {
                 tap_code(LCTL(KC_Z));
             }  
